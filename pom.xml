@@ -2,125 +2,60 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.noear</groupId>
-        <artifactId>solon-parent</artifactId>
-        <version>2.7.2</version>
-    </parent>
+  <parent>
+    <groupId>org.noear</groupId>
+    <artifactId>solon-parent</artifactId>
+    <version>2.7.2</version>
+  </parent>
 
-    <groupId>com.dudiao.solon</groupId>
-    <artifactId>solon-native-example</artifactId>
-    <version>1.0</version>
+  <groupId>com.dudiao.solon</groupId>
+  <artifactId>solon-native-example</artifactId>
+  <version>1.0</version>
 
-    <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
-    <description>Solon graalvm native example</description>
+  <description>Solon graalvm native example</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>17</java.version>
-    </properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>17</java.version>
+  </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
-        </dependency>
+  <modules>
+    <module>demo-app</module>
+    <module>demo-module1</module>
+    <module>demo-module2</module>
+  </modules>
 
-        <!-- 框架包 -->
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>wood-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>mybatis-plus-extension-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.2.224</version>
-        </dependency>
-
-        <!--solon aot start（用于 aot 时注册 native 元信息）-->
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.aot</artifactId>
-        </dependency>
-        <!--solon aot end-->
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.logging.logback</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-core</artifactId>
-            <version>${hutool.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>${project.artifactId}</finalName>
-
-        <plugins>
-            <plugin>
-                <groupId>org.noear</groupId>
-                <artifactId>solon-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-
-    <repositories>
-        <repository>
-            <id>tencent</id>
-            <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+  <repositories>
+    <repository>
+      <id>tencent</id>
+      <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
