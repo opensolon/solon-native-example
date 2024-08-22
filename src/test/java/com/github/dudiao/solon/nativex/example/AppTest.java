@@ -1,10 +1,8 @@
 package com.github.dudiao.solon.nativex.example;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.snack.ONode;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
 /**
@@ -13,7 +11,6 @@ import org.noear.solon.test.SolonTest;
  */
 @Slf4j
 @SolonTest(App.class)
-@RunWith(SolonJUnit4ClassRunner.class)
 public class AppTest {
 
   @Test
