@@ -19,15 +19,6 @@ import javax.sql.DataSource;
  */
 @Configuration
 public class MybatisConfig {
-
-  /**
-   * 配置数据源
-   */
-  @Bean(name = "db1", typed = true)
-  DataSource datasource(@Inject("${datasource}") HikariDataSource ds) {
-    return ds;
-  }
-
   @Bean
   public void db1_cfg(@Db("db1") MybatisConfiguration cfg,
                       @Db("db1") GlobalConfig globalConfig) {
