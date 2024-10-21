@@ -13,10 +13,9 @@ import org.noear.solon.data.annotation.Cache;
 @Slf4j
 @Component
 public class TestServiceImpl implements TestService {
-
-  @Override
-  @Cache(key = "test::say::${msg}")
-  public String say(String msg) {
-    return "I want say: " + msg + ", now: " + DateUtil.now();
-  }
+    @Override
+    @Cache(key = "test::say::${msg}")
+    public String say(String msg) {
+        return "I want say: " + msg + ", now: " + DateUtil.now();
+    }
 }

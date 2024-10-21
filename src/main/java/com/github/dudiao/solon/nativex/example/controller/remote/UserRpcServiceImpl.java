@@ -11,7 +11,7 @@ import org.noear.solon.annotation.Remoting;
  */
 @Remoting
 @Mapping("/rpc/v1/user")
-public class UserServiceImpl implements UserService{
+public class UserRpcServiceImpl implements UserRpcService {
   @Override
   public User getById(long userId) {
     User user = new User();

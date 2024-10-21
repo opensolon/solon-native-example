@@ -5,7 +5,5 @@ package com.github.dudiao.solon.nativex.example.service;
  * @since 2023/4/15 14:35
  */
 public interface TestService {
-
-
-  String say(String msg);
+    String say(String msg);
 }

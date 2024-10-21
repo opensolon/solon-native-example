@@ -7,7 +7,7 @@ import com.github.dudiao.solon.nativex.example.model.entity.User;
  * @author songyinyin
  * @since 2023/4/15 16:11
  */
-public interface UserService {
+public interface UserRpcService {
 
   User getById(long userId);
   long addOrder(Order order);

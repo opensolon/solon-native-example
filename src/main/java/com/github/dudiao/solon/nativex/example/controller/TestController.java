@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
 import com.github.dudiao.solon.nativex.example.service.TestService;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
+import com.github.dudiao.solon.nativex.example.service.UserService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -22,6 +23,9 @@ public class TestController {
 
     @Inject
     private TestService testService;
+
+    @Inject
+    private UserService userService;
 
     @Inject
     UserMapper userMapper;
