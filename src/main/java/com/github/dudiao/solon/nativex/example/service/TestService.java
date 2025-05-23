@@ -6,4 +6,8 @@ package com.github.dudiao.solon.nativex.example.service;
  */
 public interface TestService {
     String say(String msg);
+
+    void asyncSay(String msg);
+
+    void asyncSay2(String msg);
 }

@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.0.4</version>
+        <version>3.3.1</version>
     </parent>
 
     <groupId>com.dudiao.solon</groupId>
@@ -34,6 +34,18 @@
             <groupId>org.noear</groupId>
             <artifactId>solon-view-freemarker</artifactId>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-logging-logback</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-scheduling-simple</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>wood-solon-plugin</artifactId>
@@ -61,11 +73,6 @@
             <artifactId>solon-aot</artifactId>
         </dependency>
         <!--solon aot end-->
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-logging-logback</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>cn.hutool</groupId>

@@ -1,10 +1,10 @@
 package com.github.dudiao.solon.nativex.example;
 
-import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.SolonMain;
+import org.noear.solon.scheduling.annotation.EnableScheduling;
 
-@Slf4j
+@EnableScheduling
 @SolonMain
 public class App {
   public static void main(String[] args) {
