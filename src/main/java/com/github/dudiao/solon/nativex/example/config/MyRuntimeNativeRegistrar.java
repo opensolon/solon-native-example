@@ -17,6 +17,5 @@ public class MyRuntimeNativeRegistrar implements RuntimeNativeRegistrar {
   public void register(AppContext context, RuntimeNativeMetadata metadata) {
     // test
     metadata.registerLambdaSerialization(TestController.class);
-    metadata.registerResourceInclude("flow/.*.yml");
   }
 }
