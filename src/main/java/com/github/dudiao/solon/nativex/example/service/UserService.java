@@ -1,6 +1,6 @@
 package com.github.dudiao.solon.nativex.example.service;
 
-import com.baomidou.mybatisplus.solon.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 
 import java.util.List;

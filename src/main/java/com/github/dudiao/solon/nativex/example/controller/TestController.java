@@ -2,7 +2,7 @@ package com.github.dudiao.solon.nativex.example.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.dudiao.solon.nativex.example.service.TestService;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;

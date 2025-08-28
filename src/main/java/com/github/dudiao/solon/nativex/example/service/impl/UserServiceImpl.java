@@ -1,6 +1,6 @@
 package com.github.dudiao.solon.nativex.example.service.impl;
 
-import com.baomidou.mybatisplus.solon.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 import com.github.dudiao.solon.nativex.example.service.UserService;

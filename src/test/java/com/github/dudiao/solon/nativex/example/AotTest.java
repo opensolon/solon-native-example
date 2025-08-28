@@ -1,6 +1,6 @@
 package com.github.dudiao.solon.nativex.example;
 
-import com.baomidou.mybatisplus.solon.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.dudiao.solon.nativex.example.service.impl.UserServiceImpl;
 import org.noear.solon.Solon;
 import org.noear.solon.aot.proxy.ProxyClassFileBuilder;
