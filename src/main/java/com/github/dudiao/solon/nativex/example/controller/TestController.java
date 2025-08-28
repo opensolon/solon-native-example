@@ -48,7 +48,7 @@ public class TestController {
 
     @Mapping("/user/{id}")
     public User userById(@Path("id") Long id) {
-        return userMapper.selectById(id);
+        return userService.getById(id);
     }
 
     @Mapping("/userByName/{name}")
