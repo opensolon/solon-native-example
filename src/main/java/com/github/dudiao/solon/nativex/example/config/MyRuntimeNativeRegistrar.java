@@ -2,6 +2,7 @@ package com.github.dudiao.solon.nativex.example.config;
 
 import com.github.dudiao.solon.nativex.example.controller.TestController;
 
+import org.noear.nami.NamiConfigurationDefault;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
 import org.noear.solon.aot.RuntimeNativeRegistrar;
@@ -17,5 +18,7 @@ public class MyRuntimeNativeRegistrar implements RuntimeNativeRegistrar {
   public void register(AppContext context, RuntimeNativeMetadata metadata) {
     // test
     metadata.registerLambdaSerialization(TestController.class);
+
+    metadata.registerDefaultConstructor(NamiConfigurationDefault.class);
   }
 }
