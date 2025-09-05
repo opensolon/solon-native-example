@@ -52,6 +52,16 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>nami-channel-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nami-coder-snack3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>wood-solon-plugin</artifactId>
         </dependency>
 
