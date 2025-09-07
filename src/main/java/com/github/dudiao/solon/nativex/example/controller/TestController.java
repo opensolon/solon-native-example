@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.dudiao.solon.nativex.example.controller.remote.UserRpcService;
+import com.github.dudiao.solon.nativex.example.model.entity.Order;
 import com.github.dudiao.solon.nativex.example.service.TestService;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
@@ -15,6 +16,8 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Param;
 import org.noear.solon.annotation.Path;
 import org.noear.solon.core.handle.ModelAndView;
+
+import java.util.Date;
 
 /**
  * @author songyinyin
@@ -52,6 +55,7 @@ public class TestController {
 
     @Mapping("/rpc/user/{id}")
     public User rpcUserById(@Path("id") Long id) {
+        userRpcService.addOrder(new Order().orderId(11).created(new Date()));
         return userRpcService.getById(id);
     }
 

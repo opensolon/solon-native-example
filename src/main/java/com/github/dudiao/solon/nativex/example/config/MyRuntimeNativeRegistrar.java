@@ -19,6 +19,6 @@ public class MyRuntimeNativeRegistrar implements RuntimeNativeRegistrar {
     // test
     metadata.registerLambdaSerialization(TestController.class);
 
-    metadata.registerDefaultConstructor(NamiConfigurationDefault.class);
+    //metadata.registerDefaultConstructor(NamiConfigurationDefault.class);
   }
 }
