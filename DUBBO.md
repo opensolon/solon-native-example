@@ -1,5 +1,5 @@
 
-### 1、代码说明
+### 1、相关代码说明
 
 * com.github.dudiao.solon.nativex.example.controller.remote.UserDubboService
 * com.github.dudiao.solon.nativex.example.controller.remote.UserDubboServiceImpl
