@@ -32,6 +32,13 @@ mybatis.db1:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
 
+
+redis.rd1:
+  # Redis模式 (standalone, cluster, sentinel)
+  redis-mode: standalone
+  redis-uri: redis://123456@localhost:6379/0
+
+
 solon.flow:
   - "classpath:flow/*.yml"
 
