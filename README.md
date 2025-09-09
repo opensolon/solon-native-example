@@ -70,17 +70,16 @@ GET http://localhost:8080/hello/tml?name=solon
 GET http://localhost:8080/htm/hello.htm
 ```
 
-### remote
+### rpc 
 
 ```http request
-GET http://localhost:8080/rpc/v1/user/getById?userId=11
+GET http://localhost:8080/nami/test
 
-GET http://localhost:8080/rpc/v1/user/addOrder?orderId=12
+GET http://localhost:8080/dubbo/test
 ```
 响应：
 ```json
 {
-  "@type": "com.github.dudiao.solon.demo.User",
   "user_name": "dudiao",
   "wxid": "11"
 }

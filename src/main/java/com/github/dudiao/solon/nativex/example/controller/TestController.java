@@ -3,12 +3,14 @@ package com.github.dudiao.solon.nativex.example.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.dudiao.solon.nativex.example.controller.remote.UserDubboService;
 import com.github.dudiao.solon.nativex.example.controller.remote.UserRpcService;
 import com.github.dudiao.solon.nativex.example.model.entity.Order;
 import com.github.dudiao.solon.nativex.example.service.TestService;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 import com.github.dudiao.solon.nativex.example.service.UserService;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
@@ -38,6 +40,9 @@ public class TestController {
     @NamiClient(url = "http://localhost:8080/rpc/v1/user")
     UserRpcService userRpcService;
 
+    @DubboReference
+    private UserDubboService userDubboService;
+
     @Mapping("/hello")
     public String hello(@Param(defaultValue = "world") String name) {
         return "Hello " + name;
@@ -51,12 +56,6 @@ public class TestController {
     @Mapping("/cache/say")
     public String say(String msg) {
         return testService.getClass().getName() + "\n::" + testService.say(msg);
-    }
-
-    @Mapping("/rpc/user/{id}")
-    public User rpcUserById(@Path("id") Long id) {
-        userRpcService.addOrder(new Order().orderId(11).created(new Date()));
-        return userRpcService.getById(id);
     }
 
     @Mapping("/user/{id}")
@@ -76,5 +75,17 @@ public class TestController {
         LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
         query.ge(User::getUserId, 10);
         return userMapper.selectPage(Page.of(num, 5), query);
+    }
+
+    @Mapping("/nami/test")
+    public User namiTest() {
+        userRpcService.addOrder(new Order().orderId(11).created(new Date()));
+        return userRpcService.getById(11);
+    }
+
+    @Mapping("/dubbo/test")
+    public User dubboTest() {
+        userDubboService.addOrder(new Order().orderId(12).created(new Date()));
+        return userDubboService.getById(12);
     }
 }

@@ -4,6 +4,9 @@ solon.app:
   name: 'demo-app'
   group: 'demo'
 
+solon.config:
+  load: "demo.yml" #尝试加载体外配置（放内放外都行）
+
 solon.logging:
   appender:
 #    console:
@@ -14,6 +17,9 @@ solon.logging:
     root:
       level: DEBUG
 
+solon.flow:
+  - "classpath:flow/*.yml"
+
 solon.dataSources:
   db1!:
     class: "com.zaxxer.hikari.HikariDataSource"
@@ -21,8 +27,8 @@ solon.dataSources:
     jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
     maxPoolSize: 1
 
-#默认
-mybatis.db1:
+# for mybatis
+mybatis.db1:      #与数据源名对应起来
   typeAliases:    #支持包名 或 类名
     - "com.github.dudiao.solon.nativex.example.model.entity"
   mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
@@ -32,18 +38,17 @@ mybatis.db1:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
 
+# for dubbo
+dubbo:
+  application:
+    name: ${solon.app.name}
+    logger: slf4j
+  registry:
+    address: N/A
+  consumer:
+    scope: local
 
-redis.rd1:
-  # Redis模式 (standalone, cluster, sentinel)
-  redis-mode: standalone
-  redis-uri: redis://123456@localhost:6379/0
-
-
-solon.flow:
-  - "classpath:flow/*.yml"
-
+# for test
 json.inputFilePath: /Users/songyinyin/study/solon-native-example/src/main/resources/json/test.json
 json.outputDir: target/json
 json.inputFileCharset: UTF-8
-
-solon.config.add: "./app.yml"
