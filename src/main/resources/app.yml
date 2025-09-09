@@ -4,39 +4,13 @@ solon.app:
   name: 'demo-app'
   group: 'demo'
 
-solon.config:
-  load: "demo.yml" #尝试加载体外配置（放内放外都行）
-
 solon.logging:
   appender:
-#    console:
-#      pattern: "%d{yyyy-MM-dd HH:mm:ss} %-5level #${PID:-} %white(---) %-45(%cyan(%.32logger{30}:%L)) %msg%n"
     file:
-      maxFileSize: "1 KB"
+      enable: false
   logger:
     root:
       level: DEBUG
-
-solon.flow:
-  - "classpath:flow/*.yml"
-
-solon.dataSources:
-  db1!:
-    class: "com.zaxxer.hikari.HikariDataSource"
-    driverClassName: org.h2.Driver
-    jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
-    maxPoolSize: 1
-
-# for mybatis
-mybatis.db1:      #与数据源名对应起来
-  typeAliases:    #支持包名 或 类名
-    - "com.github.dudiao.solon.nativex.example.model.entity"
-  mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
-    - "com.github.dudiao.solon.nativex.example.mapper"
-#    - "classpath:mapper/*.xml"
-  configuration:
-    cacheEnabled: false
-    mapUnderscoreToCamelCase: true
 
 # for dubbo
 dubbo:
@@ -47,8 +21,3 @@ dubbo:
     address: N/A
   consumer:
     scope: local
-
-# for test
-json.inputFilePath: /Users/songyinyin/study/solon-native-example/src/main/resources/json/test.json
-json.outputDir: target/json
-json.inputFileCharset: UTF-8

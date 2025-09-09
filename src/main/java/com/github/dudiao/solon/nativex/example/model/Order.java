@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.nativex.example.model.entity;
+package com.github.dudiao.solon.nativex.example.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
