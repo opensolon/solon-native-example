@@ -7,10 +7,12 @@ import org.noear.solon.aot.SolonAotProcessor;
  */
 public class AotTest {
     public static void main(String[] args) throws Throwable {
-        SolonAotProcessor.main(new  String[]{
+        String userDir = System.getProperty("user.dir");
+
+        SolonAotProcessor.main(new String[]{
             "com.github.dudiao.solon.nativex.example.App",
-            "/Users/noear/WORK/work_github/noear_admin/solon-native-example/target/classes",
-            "/Users/noear/WORK/work_github/noear_admin/solon-native-example/target/solon-aot/main/sources",
+            userDir + "/target/classes",
+            userDir + "/target/solon-aot/main/sources",
             "com.dudiao.solon",
             "solon-native-example",
             "",
