@@ -1,36 +1,19 @@
 package com.github.dudiao.solon.nativex.example;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.github.dudiao.solon.nativex.example.service.impl.UserServiceImpl;
-import org.noear.solon.Solon;
-import org.noear.solon.aot.proxy.ProxyClassFileBuilder;
-import org.noear.solon.core.runtime.NativeDetector;
-import org.noear.solon.core.wrap.MethodWrap;
-
-import java.lang.reflect.Method;
+import org.noear.solon.aot.SolonAotProcessor;
 
 /**
  * @author noear 2024/10/21 created
  */
 public class AotTest {
-    public static void main(String[] args) throws Exception {
-        System.setProperty(NativeDetector.AOT_PROCESSING, "1");
-
-        Solon.start(App.class, args);
-
-        StringBuilder builder = new StringBuilder();
-
-        ProxyClassFileBuilder proxyClassFileBuilder = new ProxyClassFileBuilder();
-        proxyClassFileBuilder.build(UserServiceImpl.class).writeTo(builder);
-        System.out.println("------------------------------------");
-        System.out.println(builder);
-        System.out.println("------------------------------------");
-
-        for (Method method : IService.class.getDeclaredMethods()) {
-            if (method.getName().contains("page")) {
-                MethodWrap methodWrap = Solon.app().context().methodGet(UserServiceImpl.class, method);
-                methodWrap.getParamWraps();
-            }
-        }
+    public static void main(String[] args) throws Throwable {
+        SolonAotProcessor.main(new  String[]{
+            "com.github.dudiao.solon.nativex.example.App",
+            "/Users/noear/WORK/work_github/noear_admin/solon-native-example/target/classes",
+            "/Users/noear/WORK/work_github/noear_admin/solon-native-example/target/solon-aot/main/sources",
+            "com.dudiao.solon",
+            "solon-native-example",
+            "",
+        });
     }
 }

@@ -12,7 +12,7 @@ solon.logging:
       maxFileSize: "1 KB"
   logger:
     root:
-      level: DEBUG
+      level: INFO
 
 solon.dataSources:
   db1!:
