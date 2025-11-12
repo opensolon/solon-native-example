@@ -54,7 +54,7 @@ mvn clean install -DskipTests
 sdk use java 17.0.7-graal
 
 # 打包成native可执行程序
-mvn clean native:compile -P native -DskipTests
+mvn clean -DskipTests=true -P native native:compile
 
 # 运行可执行成
 ./target/solon-native-example
